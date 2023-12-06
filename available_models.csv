@@ -2,3 +2,4 @@ model_name,path
 "vss_32","keras_model/vss_32.keras.zip"
 "vss_64","keras_model/vss_64.keras.zip"
 "vss_128","keras_model/vss_128.keras.zip"
+"vss_phn_32","keras_model/vss_phn_32.keras.zip"
