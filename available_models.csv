@@ -1,5 +1,7 @@
-model_name,path
-"vss_32","keras_model/vss_32.keras.zip"
-"vss_64","keras_model/vss_64.keras.zip"
-"vss_128","keras_model/vss_128.keras.zip"
-"vss_phn_32","keras_model/vss_phn_32.keras.zip"
+model_name,path,input_height,input_width,input_channels,auxiliary_input_size,description
+"vss_32","keras_model/vss_32.keras.zip",32,32,3,0,"A Keras model trained with residual plots containing non-linearity and heteroskedasticity patterns."
+"vss_64","keras_model/vss_64.keras.zip",64,64,3,0,"A Keras model trained with residual plots containing non-linearity and heteroskedasticity patterns."
+"vss_128","keras_model/vss_128.keras.zip",128,128,3,0,"A Keras model trained with residual plots containing non-linearity and heteroskedasticity patterns."
+"vss_phn_32","keras_model/vss_phn_32.keras.zip",32,32,3,5,"A Keras model trained with residual plots containing non-linearity, heteroskedasticity and non-normality patterns."
+"vss_phn_64","keras_model/vss_phn_64.keras.zip",64,64,3,5,"A Keras model trained with residual plots containing non-linearity, heteroskedasticity and non-normality patterns."
+"vss_phn_128","keras_model/vss_phn_128.keras.zip",128,128,3,5,"A Keras model trained with residual plots containing non-linearity, heteroskedasticity and non-normality patterns."
