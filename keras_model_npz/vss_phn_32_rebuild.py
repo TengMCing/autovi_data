@@ -163,6 +163,11 @@ def build_model(npz_filepath):
     
     fd = np.load(npz_filepath)
     this_model.set_weights([fd[key] for key in fd])
+    
+    layer_name = ["input_1", "tf.__operators__.getitem", "tf.nn.bias_add", "grey_scale", "block1_conv1", "batch_normalization", "activation", "block1_conv2", "batch_normalization_1", "activation_1", "block1_pool", "dropout", "block2_conv1", "batch_normalization_2", "activation_2", "block2_conv2", "batch_normalization_3", "activation_3", "block2_pool", "dropout_1", "block3_conv1", "batch_normalization_4", "activation_4", "block3_conv2", "batch_normalization_5", "activation_5", "block3_conv3", "batch_normalization_6", "activation_6", "block3_pool", "dropout_2", "block4_conv1", "batch_normalization_7", "activation_7", "block4_conv2", "batch_normalization_8", "activation_8", "block4_conv3", "batch_normalization_9", "activation_9", "block4_pool", "dropout_3", "block5_conv1", "batch_normalization_10", "activation_10", "block5_conv2", "batch_normalization_11", "activation_11", "block5_conv3", "batch_normalization_12", "activation_12", "block5_pool", "dropout_4", "global_max_pooling2d", "additional_input", "concatenate", "dense", "dropout_5", "activation_13", "dense_1"]
+    
+    for i, layer in enumerate(this_model.layers):
+        layer._name = layer_name[i]
                        
     # this_model.summary()
     return this_model
