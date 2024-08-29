@@ -171,7 +171,7 @@ def build_model(npz_filepath):
             continue
         if layer_name[i] != layer.name:
             print(i)
-            raise ValueError(f'Layer name "{layer.name}" does not match the desired layer name "{layer_name[i]}"')
+            raise ValueError(f'Layer name "{layer.name}" does not match the desired layer name "{layer_name[i]}"! {i}')
                        
     # this_model.summary()
     return this_model
