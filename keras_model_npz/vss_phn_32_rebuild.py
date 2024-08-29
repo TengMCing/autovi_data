@@ -157,5 +157,5 @@ def build_model(npz_filepath):
     fd = np.load(npz_filepath)
     this_model.set_weights([fd[key] for key in fd])
                        
-    this_model.summary()
+    # this_model.summary()
     return this_model
