@@ -7,6 +7,7 @@ def build_model(npz_filepath):
     RES = 64
     CHANNELS = 3
     num_filters = 64
+    cnn_dropout = 0.3
     
     # Preprocess the input image
     model_input = keras.layers.Input(shape=(RES, RES, CHANNELS))
@@ -32,6 +33,7 @@ def build_model(npz_filepath):
     
     # pool 1    
     x = keras.layers.MaxPooling2D((2, 2), strides=(2, 2), name="block1_pool")(x)
+    x = keras.layers.Dropout(cnn_dropout)(x)
     
 
     # Block 2
@@ -51,6 +53,7 @@ def build_model(npz_filepath):
     
     # pool 2    
     x = keras.layers.MaxPooling2D((2, 2), strides=(2, 2), name="block2_pool")(x)
+    x = keras.layers.Dropout(cnn_dropout)(x)
 
     # Block 3
     # conv 3.1
@@ -76,6 +79,7 @@ def build_model(npz_filepath):
     
     # pool 3
     x = keras.layers.MaxPooling2D((2, 2), strides=(2, 2), name="block3_pool")(x)
+    x = keras.layers.Dropout(cnn_dropout)(x)
     
 
     # Block 4
@@ -102,6 +106,7 @@ def build_model(npz_filepath):
     
     # pool 4
     x = keras.layers.MaxPooling2D((2, 2), strides=(2, 2), name="block4_pool")(x)
+    x = keras.layers.Dropout(cnn_dropout)(x)
     
 
     # Block 5
@@ -128,6 +133,7 @@ def build_model(npz_filepath):
     
     # pool 5
     x = keras.layers.MaxPooling2D((2, 2), strides=(2, 2), name="block5_pool")(x)
+    x = keras.layers.Dropout(cnn_dropout)(x)
     
     # Get 1D output
     x = keras.layers.GlobalAveragePooling2D()(x)
@@ -141,6 +147,7 @@ def build_model(npz_filepath):
     # Dense layers    
     x = keras.layers.Dense(256)(x)
     x = keras.layers.BatchNormalization()(x)
+    x = keras.layers.Dropout(0.4)(x)
     x = keras.layers.Activation("relu")(x)
     
     model_output = keras.layers.Dense(1, activation="relu")(x)
