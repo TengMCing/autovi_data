@@ -139,7 +139,7 @@ def build_model(npz_filepath):
     x = keras.layers.GlobalMaxPooling2D(name="global_max_pooling2d")(x)
     
     # Get additional information
-    additional_x = keras.layers.Input(shape=(5), name="additional_input")
+    additional_x = keras.layers.Input(shape=(5,), name="additional_input")
     
     # Merge inputs
     x = keras.layers.concatenate([x, additional_x], name="concatenate")
