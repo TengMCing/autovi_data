@@ -156,7 +156,7 @@ def build_model(hp):
     
     # Compile the model
     this_model.compile(
-      keras.optimizers.legacy.Adam(
+      keras.optimizers.Adam(
         learning_rate=0.00524288
       ),
       loss="mean_squared_error",

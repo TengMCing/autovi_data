@@ -154,7 +154,7 @@ def build_model(npz_filepath):
     
     # Compile the model
     this_model.compile(
-      keras.optimizers.legacy.Adam(
+      keras.optimizers.Adam(
         learning_rate=0.00032768
       ),
       loss="mean_squared_error",
